@@ -1,0 +1,62 @@
+[
+  {
+    "id": 0,
+    "title": "Cool white and green office",
+    "picture": "images/green-office.jpg",
+    "type": "Office Space",
+    "address": "42 example st",
+    "surface": "74 sqm",
+	"lat": 0.0,
+	"lng": 0.0
+  },
+  {
+    "id": 1,
+    "title": "Modern CBD office space",
+    "picture": "images/ragged-edge-london-office.jpg",
+    "type": "Office Space",
+    "address": "London CBD",
+    "surface": "120 sqm",
+	"lat": 0.0,
+	"lng": 0.0
+  },
+  {
+    "id": 2,
+    "title": "Smart bike dock",
+    "picture": "images/bike-dock.jpg",
+    "type": "Bike rack",
+    "address": "300 Swanston street",
+    "surface": "N/A",
+	"lat": 0.0,
+	"lng": 0.0
+  },
+  {
+    "id": 3,
+    "title": "Parking spot in secure city car park",
+    "picture": "images/parking-spot.jpg",
+    "type": "Bike rack",
+    "address": "Bay 4, 42 Franklin street, Melbourne",
+    "surface": "N/A",
+	"lat": 0.0,
+	"lng": 0.0
+  },
+  {
+    "id": 5,
+    "title": "Small Carlton appartment",
+    "picture": "images/small-appartment.jpg",
+    "type": "Accommodation",
+    "address": "315 Rathdown street, Carlton",
+    "surface": "40 sqm",
+	"lat": 0.0,
+	"lng": 0.0
+  },
+    {
+    "id": 6,
+    "title": "Modern appartment in Southbank",
+    "picture": "images/modern-appartment.jpg",
+    "type": "Accommodation",
+    "address": "Southbank, Melbourne",
+    "surface": "70 sqm",
+	"lat": 0.0,
+	"lng": 0.0
+  }
+]
