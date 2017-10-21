@@ -5,9 +5,11 @@
     "picture": "images/green-office.jpg",
     "type": "Office Space",
     "address": "42 example st",
-    "surface": "74 sqm",
-	"lat": 41.23,
-	"lng": 197.120
+	"facilities": "Electricity, Wifi, Meeting table and 8 chairs, bathroom",
+    "price": 0.5,
+	"surface": "74 sqm",
+	"lat": -37.813628,
+	"lng": 144.963058
   },
   {
     "id": 1,
@@ -15,9 +17,11 @@
     "picture": "images/ragged-edge-london-office.jpg",
     "type": "Office Space",
     "address": "London CBD",
-    "surface": "120 sqm",
-	"lat": 111.54,
-	"lng": 359.20
+	"facilities": "Electricity, Wifi, Meeting table and 8 chairs, bathroom",
+    "price": 0.5,
+	"surface": "120 sqm",
+	"lat": -37.54,
+	"lng": 144.20
   },
   {
     "id": 2,
@@ -25,9 +29,11 @@
     "picture": "images/bike-dock.jpg",
     "type": "Bike rack",
     "address": "300 Swanston street",
-    "surface": "N/A",
-	"lat": 347.192,
-	"lng": 541.122
+	"facilities": "Secured Lock",
+    "price": 0.5,
+	"surface": "N/A",
+	"lat": -37.192,
+	"lng": 144.122
   },
   {
     "id": 3,
@@ -35,9 +41,23 @@
     "picture": "images/parking-spot.jpg",
     "type": "Bike rack",
     "address": "Bay 4, 42 Franklin street, Melbourne",
-    "surface": "N/A",
-	"lat": 341.22,
-	"lng": 349.123
+    "facilities": "24h security",
+	"price": 0.5,
+	"surface": "N/A",
+	"lat": -38.22,
+	"lng": 145.123
+  },
+  {
+    "id": 4,
+    "title": "Modern appartment in Southbank",
+    "picture": "images/modern-appartment.jpg",
+    "type": "Accommodation",
+    "address": "Southside appartments",
+	"facilities": "Swimming pool, white goods, view on the Yarra, NBN ready",
+    "price": 0.5,
+	"surface": "40 sqm",
+	"lat": -36.230,
+	"lng": 144.0233
   },
   {
     "id": 5,
@@ -45,9 +65,11 @@
     "picture": "images/small-appartment.jpg",
     "type": "Accommodation",
     "address": "315 Rathdown street, Carlton",
-    "surface": "40 sqm",
-	"lat": 45.230,
-	"lng": 23.0233
+	"facilities": "Fully furnished, water, electricity, wifi",
+    "price": 0.5,
+	"surface": "40 sqm",
+	"lat": -36.230,
+	"lng": 144.0233
   },
     {
     "id": 6,
@@ -55,9 +77,11 @@
     "picture": "images/event-venue.jpg",
     "type": "Bar",
     "address": "Southbank, Melbourne",
-    "surface": "70 sqm",
+	"facilities": "Sound system, karaoke system",
+    "price": 0.5,
+	"surface": "70 sqm",
 	"lat": -37.1400,
-	"lng": 234.566
+	"lng": 144.566
 },
 {
 	"id": 7,
@@ -65,9 +89,11 @@
 	"picture": "images/best-venues-alto-event-space-01.jpg",
 	"type": "Event Space",
 	"address": "South Yarra, Melbourne",
-	"surface": "90 sqm",
+	"facilities": "Bar, podium, seats 35, sound system, catering available",
+	"price": 0.5,
+	"surface": "200 sqm",
 	"lat": -38.1400,
-	"lng": 234.566
+	"lng": 146.566
 },
 {
 	"id": 8,
@@ -75,9 +101,11 @@
 	"picture": "images/pranamaya-yoga-studio.jpg",
 	"type": "Gym/ Athletics",
 	"address": "Sydney, Australia",
+	"facilities": "Pillows, Yoga mats, change rooms, shower",
+	"price": 0.5,
 	"surface": "65 sqm",
-	"lat": -138.23,
-	"lng": 154.566
+	"lat": -38.23,
+	"lng": 144.00
 },
 {
 	"id": 9,
@@ -85,9 +113,11 @@
 	"picture": "images/space-body.jpg",
 	"type": "Car Park",
 	"address": "Fitzroy, Melbourne",
+	"facilities": "Secured car park",
+	"price": 0.5,
 	"surface": "65 sqm",
-	"lat": -138.46,
-	"lng": 154.6788
+	"lat": -38.6,
+	"lng": 144.6788
 },
 {
 	"id": 10,
@@ -95,6 +125,8 @@
 	"picture": "images/storage.jpg",
 	"type": "Car Park",
 	"address": "Fitzroy, Melbourne",
+	"facilities": "Metal door, easy access from highway",
+	"price": 0.5,
 	"surface": "25 m3",
 	"lat": -37.46,
 	"lng": 144.688

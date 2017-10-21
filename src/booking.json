@@ -7,6 +7,8 @@
 	"picture": "images/green-office.jpg",
 	"type": "Office Space",
 	"address": "42 example st",
+	"facilities": "Electricity, Wifi, Meeting table and 8 chairs, bathroom",
+	"price": 0.5,
 	"surface": "74 sqm",
 	"lat": 41.23,
 	"lng": 197.120
