@@ -37,7 +37,7 @@
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="title">Title:</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" id="title" placeholder="The name of your listing" required />
+						<input type="text" name="title" class="form-control" id="title" placeholder="The name of your listing" required />
 					</div>
 				</div>
 				<div class="form-group">
@@ -59,25 +59,25 @@
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="address">Location:</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" id="address" placeholder="Exact location of your space (address, level, unit number, etc.)" required />
+						<input type="text" name="address" class="form-control" id="address" placeholder="Exact location of your space (address, level, unit number, etc.)" required />
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="facilities">Facilities:</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" id="facilities" placeholder="List the facilities available for your space" required />
+						<input type="text" name="facilities" class="form-control" id="facilities" placeholder="List the facilities available for your space" required />
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="size">Size:</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" id="size" placeholder="Surfaces in square meters, volumes in cubic meters. N/A otherwise." required />
+						<input type="text" name="size" class="form-control" id="size" placeholder="Surfaces in square meters, volumes in cubic meters. N/A otherwise." required />
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="price">Price/h:</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" id="price" placeholder="The hourly price of your space. People will be able to rent per the minute." required />
+						<input type="text" name="price" class="form-control" id="price" placeholder="The hourly price of your space. People will be able to rent per the minute." required />
 					</div>
 				</div>
 				<div class="form-group"> 
@@ -89,32 +89,34 @@
 		</div>
 	
     </div>
-    
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="js/qrious/qrious.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+		<script src="js/qrious/qrious.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
     <script src="js/web3.min.js"></script>
     <script src="js/truffle-contract.js"></script>
-    <script src="js/create.js"></script>
-	
-	<script type="text/javascript">	
-    (function() {
-        'use strict';
-
-		$("form#listmyspace").submit( function(e) {
-			e.preventDefault();
-			App.handleBooking($("form#listmyspace").serialize); 
-
-			/*
-			 *	Replace me !
-			 */
-			console.log('Form submitted');
-		});
+		<script src="js/create.js"></script>
 		
-	})();
-	</script>
+		<script type="text/javascript">	
+			(function() {
+				'use strict';	
+				$( "form" ).on( "submit", function(event) {
+					event.preventDefault();
+					var spaceObj = {
+						"title": $("form#listmyspace input#title").val(),
+						"type": $("form#listmyspace input#type").val(),
+						"address": $("form#listmyspace input#address").val(),
+						"facilities": $("form#listmyspace input#facilities").val(),
+						"size": $("form#listmyspace input#size").val(),
+						"price": $("form#listmyspace input#price").val(),
+					};
+					App.handleBooking(spaceObj); 
+				});
+		})();
+		</script>
+
   </body>
 </html>
