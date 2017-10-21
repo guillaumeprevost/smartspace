@@ -63,6 +63,7 @@
 				<hr />
 				<h3>How to get there?</h3>
 				<div id="mapid" style="height: 300px"></div>
+				<br />
 			</div>
 		</div>
 	
@@ -110,9 +111,10 @@
         	var CartoDB_Positron = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
 						attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
 						subdomains: 'abcd',
-						maxZoom: 17
+						maxZoom: 19
 					}).addTo(map);
 					L.marker(coords).addTo(map);
+					map.setZoom(14);
    		 	});
 		});
 	</script>
