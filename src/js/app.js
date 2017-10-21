@@ -3,7 +3,7 @@ App = {
   contracts: {},
 
   init: function() {
-    // Load pets.
+    // Load listings.
     $.getJSON('../properties.json', function(data) {
       var listingsRow = $('#listingsRow');
       var listingTemplate = $('#listingTemplate');
@@ -14,7 +14,7 @@ App = {
         listingTemplate.find('.listing-type').text(data[i].type);
         listingTemplate.find('.listing-address').text(data[i].address);
         listingTemplate.find('.listing-surface').text(data[i].surface);
-        listingTemplate.find('.btn-adopt').attr('data-id', data[i].id);
+        listingTemplate.find('.btn-book').attr('data-id', data[i].id);
 
         listingsRow.append(listingTemplate.html());
       }
@@ -40,7 +40,7 @@ App = {
   },
 
   bindEvents: function() {
-    $(document).on('click', '.btn-adopt', App.handleAdopt);
+    $(document).on('click', '.btn-book', App.handleBooking);
   },
 
   markAdopted: function(adopters, account) {
@@ -49,14 +49,15 @@ App = {
      */
   },
 
-  handleAdopt: function() {
+  handleBooking: function() {
     event.preventDefault();
 
-    var petId = parseInt($(event.target).data('id'));
+    var listingId = parseInt($(event.target).data('id'));
 
     /*
      * Replace me...
      */
+	document.location.href = 'booking.html';
   }
 
 };

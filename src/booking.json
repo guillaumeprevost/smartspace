@@ -1,0 +1,16 @@
+{
+  "owner":	"h456fvh12khv6klvg7j3vh2k756",
+  "renter":	"3l7326s53re824isdfh384y21hb"
+  "space": {
+	"id": 0,
+	"title": "Cool white and green office",
+	"picture": "images/green-office.jpg",
+	"type": "Office Space",
+	"address": "42 example st",
+	"surface": "74 sqm",
+	"lat": 41.23,
+	"lng": 197.120
+  },
+  "start": 1508569631,
+  "end": 1508684400,
+}

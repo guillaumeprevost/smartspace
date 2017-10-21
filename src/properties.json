@@ -6,8 +6,8 @@
     "type": "Office Space",
     "address": "42 example st",
     "surface": "74 sqm",
-	"lat": 0.0,
-	"lng": 0.0
+	"lat": 41.23,
+	"lng": 197.120
   },
   {
     "id": 1,
@@ -16,8 +16,8 @@
     "type": "Office Space",
     "address": "London CBD",
     "surface": "120 sqm",
-	"lat": 0.0,
-	"lng": 0.0
+	"lat": 111.54,
+	"lng": 359.20
   },
   {
     "id": 2,
@@ -26,8 +26,8 @@
     "type": "Bike rack",
     "address": "300 Swanston street",
     "surface": "N/A",
-	"lat": 0.0,
-	"lng": 0.0
+	"lat": 347.192,
+	"lng": 541.122
   },
   {
     "id": 3,
@@ -36,8 +36,8 @@
     "type": "Bike rack",
     "address": "Bay 4, 42 Franklin street, Melbourne",
     "surface": "N/A",
-	"lat": 0.0,
-	"lng": 0.0
+	"lat": 341.22,
+	"lng": 349.123
   },
   {
     "id": 5,
@@ -46,17 +46,57 @@
     "type": "Accommodation",
     "address": "315 Rathdown street, Carlton",
     "surface": "40 sqm",
-	"lat": 0.0,
-	"lng": 0.0
+	"lat": 45.230,
+	"lng": 23.0233
   },
     {
     "id": 6,
-    "title": "Modern appartment in Southbank",
-    "picture": "images/modern-appartment.jpg",
-    "type": "Accommodation",
+    "title": "Karaoke Bar for hire",
+    "picture": "images/event-venue.jpg",
+    "type": "Bar",
     "address": "Southbank, Melbourne",
     "surface": "70 sqm",
-	"lat": 0.0,
-	"lng": 0.0
-  }
+	"lat": -37.1400,
+	"lng": 234.566
+},
+{
+	"id": 7,
+	"title": "Open dance venue/ Event Space",
+	"picture": "images/best-venues-alto-event-space-01.jpg",
+	"type": "Event Space",
+	"address": "South Yarra, Melbourne",
+	"surface": "90 sqm",
+	"lat": -38.1400,
+	"lng": 234.566
+},
+{
+	"id": 8,
+	"title": "Yoga Studio",
+	"picture": "images/pranamaya-yoga-studio.jpg",
+	"type": "Gym/ Athletics",
+	"address": "Sydney, Australia",
+	"surface": "65 sqm",
+	"lat": -138.23,
+	"lng": 154.566
+},
+{
+	"id": 9,
+	"title": "Car Park",
+	"picture": "images/space-body.jpg",
+	"type": "Car Park",
+	"address": "Fitzroy, Melbourne",
+	"surface": "65 sqm",
+	"lat": -138.46,
+	"lng": 154.6788
+},
+{
+	"id": 10,
+	"title": "Storage Space",
+	"picture": "images/storage.jpg",
+	"type": "Car Park",
+	"address": "Fitzroy, Melbourne",
+	"surface": "25 m3",
+	"lat": -37.46,
+	"lng": 144.688
+}
 ]

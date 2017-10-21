@@ -16,47 +16,74 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+	
+	<style>
+		@import 'https://fonts.googleapis.com/css?family=Ubuntu';
+		
+		body {
+			font-family: 'Ubuntu', 'Sans Serif';
+			font-weight: 800;
+		}
+		
+		h1 {
+			font-size: 40pt;
+		}
+		
+		h2 {
+			font-size: 30pt;
+		}
+		
+		h1, h2 {
+			margin-left: 20%;
+		}
+		
+		video#video-background { 
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		min-width: 100%;
+		min-height: 100%;
+		width: auto;
+		height: auto;
+		z-index: -100;
+		-ms-transform: translateX(-50%) translateY(-50%);
+		-moz-transform: translateX(-50%) translateY(-50%);
+		-webkit-transform: translateX(-50%) translateY(-50%);
+		transform: translateX(-50%) translateY(-50%);
+		background: url(polina.jpg) no-repeat;
+		background-size: cover; 
+	}
+	</style>
   </head>
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-8 col-sm-push-2">
-          <h1 class="text-center">Smart Space</h1>
-          <hr/>
-          <br/>
-        </div>
-      </div>
-
-      <div id="listingsRow" class="row">
-        <!-- SPACES LOAD HERE -->
-      </div>
-    </div>
-
-    <div id="listingTemplate" style="display: none;">
-      <div class="col-sm-6 col-md-4 col-lg-3">
-        <div class="panel panel-default panel-pet">
-          <div class="panel-heading">
-            <h3 class="panel-title">Smart Space</h3>
-          </div>
-          <div class="panel-body">
-            <img alt="140x140" data-src="holder.js/140x140" class="img-rounded img-center" style="width: 100%;" src="images/green-office.jpg" data-holder-rendered="true">
-            <br/><br/>
-            <strong>Type</strong>: <span class="listing-type">Space Type</span><br/>
-            <strong>Address</strong>: <span class="listing-address">42 example street</span><br/>
-            <strong>Size</strong>: <span class="listing-surface">120 sqm</span><br/><br/>
-            <button class="btn btn-primary btn-adopt" type="button" data-id="0">Book it</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
+	<video id="video-background" playsinline autoplay muted loop poster="images/melbourne.jpg">
+		<source src="videos/melbourne.mp4" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+	<script>
+		document.getElementById('video-background').addEventListener('loadedmetadata', function() {
+			this.currentTime = 50;
+		}, false);
+	</script>  
+  
+		<div style="color: #07faf9; background-color:rgba(22, 40, 52, 0.5); margin-top: 300px; display: block">
+			<div class="row">
+				<div class="col-xs-12 col-sm-8 col-sm-push-2">
+					<img src="images/smartspace-logo.png" style="float: left" />
+					<h1>Smart Space</h1>
+					<h2>Any Space, Anywhere, Anytime.</h2>
+				</div>
+			</div>
+		</div>
+		<br />
+		<div class="text-center">
+			<a href="listing.html" class="btn btn-lg btn-info" style="border-radius: 15px; background-color:rgba(22, 40, 52, 0.5); color: #09f7f7">Get Started now !</a>
+		</div>
+		
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/web3.min.js"></script>
-    <script src="js/truffle-contract.js"></script>
-    <script src="js/app.js"></script>
   </body>
 </html>
