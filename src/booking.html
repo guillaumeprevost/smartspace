@@ -18,6 +18,8 @@
     <![endif]-->
   </head>
   <body>
+			<div style="position:absolute; right: 0; top: 0; padding: 25px"><a href="listing.html">^ Back to listings</a></div>			
+
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-sm-8 col-sm-push-2">
@@ -36,7 +38,7 @@
 
 		<div class="row">
 		<div class="col-md-12 alert alert-success">
-			<strong>Booking READY!</strong> Booked from DD/MM/YYYY HH:MM to HH:MM - Paid $99
+			<strong>Booking READY!</strong> Booked from Sunday 11:03 to 17:03 - Paid ETH 12
 		  </div>
 		</div>
 		
@@ -48,12 +50,12 @@
 			</div>
 			
 			<div class="col-md-8">
-				<img src="images/ragged-edge-london-office.jpg" style="max-width: 100%; max-height: 300px" />
-				<h1>Office Space</h1>
-				<p>Type: ddd</p>
-				<p>Address: ddd</p>
-				<p>Surface: ddd</p>
-				<a href="#" class="btn btn-primary btn-book" type="button" data-id="0">Test create</a>
+				<img id="spacePicture" style="max-width: 100%; max-height: 300px" />
+				<h1 id="spaceTitle"></h1>
+				<p><strong>Type</strong>: <span id="spaceType"></span></p>
+				<p><strong>Address</strong>: <span id="spaceAddress"></span></p>
+				<p><strong>Size</strong>: <span id="spaceSize"></span></p>
+				<p><strong>Facilities</strong>: <span id="spaceFacilities"></span></p>
 			</div>
 		</div>
 	
@@ -73,16 +75,29 @@
     (function() {
         'use strict';
 		
-		var bookingHash = '1F3sAm6ZtwLAUnj7d38pGFxtP3RVEvtsbV';
-		
-        var upload = document.getElementById('upload');
-        var preview = document.getElementById('preview');
-		//var dataURI = qrEncode("1F3sAm6ZtwLAUnj7d38pGFxtP3RVEvtsbV", {type: 6, size: 6, level: 'Q'});	
-		var QREncode = new QRious({
-          element: document.getElementById('qr'),
-          value: bookingHash,
-		  size: 300
-        });
+				//var bookingHash = '1F3sAm6ZtwLAUnj7d38pGFxtP3RVEvtsbV';
+				
+				if (typeof bookingHash !== 'undefined') {
+					var QREncode = new QRious({
+								element: document.getElementById('qr'),
+								value: bookingHash,
+						size: 300
+					});
+				}
+
+				var url = new URL(window.location.href);
+				var spaceId = url.searchParams.get("id");
+				console.log(spaceId);
+
+				$.getJSON('../properties.json', function(data) {
+					$('#spacePicture').attr('src', data[spaceId].picture);
+					$('#spaceTitle').html(data[spaceId].title);
+					$('#spaceType').html(data[spaceId].type);
+					$('#spaceAddress').html(data[spaceId].address);
+					$('#spaceFacilities').html(data[spaceId].facilities);
+					$('#spaceSize').html(data[spaceId].surface);
+   		 	});
+
 		})();
 	</script>
   </body>

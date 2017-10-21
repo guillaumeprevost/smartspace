@@ -9,6 +9,14 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+		
+		<!-- Leaflet -->
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
+		integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
+		crossorigin=""/>
+		<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"
+ integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
+ crossorigin=""></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -46,47 +54,60 @@
 
     <div id="listingTemplate" style="display: none;">
       <div class="col-sm-6 col-md-4 col-lg-3">
-			<div class="panel panel-default panel-pet"  data-toggle="modal" data-target="#myModal">
+			<div class="panel panel-default"  data-toggle="modal" data-target="#modalListing">
 			  <div class="panel-heading">
 				<h3 class="panel-title">Smart Space</h3>
 			  </div>
 			  <div class="panel-body">
 				<img alt="140x140" data-src="holder.js/140x140" class="img-rounded img-center" style="width: 100%;" src="images/green-office.jpg" data-holder-rendered="true">
 				<br/><br/>
-				<strong>Type</strong>: <span class="listing-type">Space Type</span><br/>
-				<strong>Address</strong>: <span class="listing-address">42 example street</span><br/>
-				<strong>Size</strong>: <span class="listing-surface">120 sqm</span><br/><br/>
+				<strong>Type</strong>: <span class="listing-type">N/A</span><br/>
+				<strong>Address</strong>: <span class="listing-address">N/A</span><br/>
+				<strong>Price</strong>: <span class="listing-surface">N/A</span><br/><br/>
 				<button class="btn btn-primary btn-book" type="button" data-id="0">Book it</button>
 			  </div>
 			</div>
       </div>
-		<!-- Modal -->
-		<div id="myModal" class="modal fade" role="dialog">
-		  <div class="modal-dialog">
-			<!-- Modal content-->
-			<div class="modal-content">
-			  <div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
-				<h4 class="modal-title">Modal Header</h4>
-			  </div>
-			  <div class="modal-body">
-				<p>Some text in the modal.</p>
-			  </div>
-			  <div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			  </div>
+			<!-- Modal -->
+			<div id="modalListing" class="modal modal-listing fade" role="dialog">
+				<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h2 class="modal-title panel-title" >Modal Header</h2>
+					</div>
+					<div class="modal-body">
+					<img alt="140x140" data-src="holder.js/140x140" class="img-rounded img-center" style="width: 100%;" src="images/green-office.jpg" data-holder-rendered="true">			
+					<br /><br />
+					<strong>Type</strong>: <span class="listing-type">N/A</span><br/>
+					<strong>Address</strong>: <span class="listing-address">N/A</span><br/>
+					<strong>Size</strong>: <span class="listing-surface">N/A</span><br/>
+					<strong>Facilities</strong>: <span class="listing-facilities">N/A</span><br/>
+					
+					<hr/>
+					<strong>Price</strong>: <span class="listing-price">Price</span><br/>
+					
+					<div class="modal-map"></div>
+
+					</div>
+					<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button class="btn btn-primary btn-book" type="button" data-id="0">Book it</button>
+					</div>
+				</div>
+				</div>
 			</div>
-		  </div>
-		</div>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	
+		<script>var map = new Array();</script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/web3.min.js"></script>
     <script src="js/truffle-contract.js"></script>
-    <script src="js/app.js"></script>
+		<script src="js/app.js"></script>
+		
   </body>
 </html>

@@ -14,8 +14,17 @@ App = {
         listingTemplate.find('.listing-type').text(data[i].type);
         listingTemplate.find('.listing-address').text(data[i].address);
         listingTemplate.find('.listing-surface').text(data[i].surface);
+        listingTemplate.find('.listing-price').text('ETH ' + data[i].price * 3600);
+        listingTemplate.find('.listing-facilities').text(data[i].facilities);
+        
         listingTemplate.find('.btn-book').attr('data-id', data[i].id);
-
+        
+        listingTemplate.find('.panel-default').attr('data-target', '#modalListing' + data[i].id);
+        listingTemplate.find('.panel-default').attr('id', 'panel' + data[i].id);
+        
+        listingTemplate.find('.modal-listing').attr('id', 'modalListing' + data[i].id);
+        listingTemplate.find('.modal-map').attr('id', "listingMap" + data[i].id);
+        
         listingsRow.append(listingTemplate.html());
       }
     });

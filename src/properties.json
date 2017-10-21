@@ -6,7 +6,7 @@
     "type": "Office Space",
     "address": "42 example st",
 	"facilities": "Electricity, Wifi, Meeting table and 8 chairs, bathroom",
-    "price": 0.5,
+    "price": 0.05,
 	"surface": "74 sqm",
 	"lat": -37.813628,
 	"lng": 144.963058
@@ -18,7 +18,7 @@
     "type": "Office Space",
     "address": "London CBD",
 	"facilities": "Electricity, Wifi, Meeting table and 8 chairs, bathroom",
-    "price": 0.5,
+    "price": 0.004,
 	"surface": "120 sqm",
 	"lat": -37.54,
 	"lng": 144.20
@@ -30,7 +30,7 @@
     "type": "Bike rack",
     "address": "300 Swanston street",
 	"facilities": "Secured Lock",
-    "price": 0.5,
+    "price": 0.02,
 	"surface": "N/A",
 	"lat": -37.192,
 	"lng": 144.122
@@ -39,10 +39,10 @@
     "id": 3,
     "title": "Parking spot in secure city car park",
     "picture": "images/parking-spot.jpg",
-    "type": "Bike rack",
+    "type": "Car Park",
     "address": "Bay 4, 42 Franklin street, Melbourne",
     "facilities": "24h security",
-	"price": 0.5,
+	"price": 0.005,
 	"surface": "N/A",
 	"lat": -38.22,
 	"lng": 145.123
@@ -54,7 +54,7 @@
     "type": "Accommodation",
     "address": "Southside appartments",
 	"facilities": "Swimming pool, white goods, view on the Yarra, NBN ready",
-    "price": 0.5,
+    "price": 0.05,
 	"surface": "40 sqm",
 	"lat": -36.230,
 	"lng": 144.0233
@@ -66,7 +66,7 @@
     "type": "Accommodation",
     "address": "315 Rathdown street, Carlton",
 	"facilities": "Fully furnished, water, electricity, wifi",
-    "price": 0.5,
+    "price": 0.05,
 	"surface": "40 sqm",
 	"lat": -36.230,
 	"lng": 144.0233
@@ -78,7 +78,7 @@
     "type": "Bar",
     "address": "Southbank, Melbourne",
 	"facilities": "Sound system, karaoke system",
-    "price": 0.5,
+    "price": 0.01,
 	"surface": "70 sqm",
 	"lat": -37.1400,
 	"lng": 144.566
@@ -114,7 +114,7 @@
 	"type": "Car Park",
 	"address": "Fitzroy, Melbourne",
 	"facilities": "Secured car park",
-	"price": 0.5,
+	"price": 0.09,
 	"surface": "65 sqm",
 	"lat": -38.6,
 	"lng": 144.6788
@@ -126,7 +126,7 @@
 	"type": "Car Park",
 	"address": "Fitzroy, Melbourne",
 	"facilities": "Metal door, easy access from highway",
-	"price": 0.5,
+	"price": 0.001,
 	"surface": "25 m3",
 	"lat": -37.46,
 	"lng": 144.688
