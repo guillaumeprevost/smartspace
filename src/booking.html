@@ -8,7 +8,11 @@
     <title>Smart Space</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		
+		<!-- Leaflet -->
+		<link rel="stylesheet" href="css/leaflet.css" />
+		<script type="text/javascript" src="js/leaflet.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -56,26 +60,29 @@
 				<p><strong>Address</strong>: <span id="spaceAddress"></span></p>
 				<p><strong>Size</strong>: <span id="spaceSize"></span></p>
 				<p><strong>Facilities</strong>: <span id="spaceFacilities"></span></p>
+				<hr />
+				<h3>How to get there?</h3>
+				<div id="mapid" style="height: 300px"></div>
 			</div>
 		</div>
 	
     </div>
     
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="js/qrious/qrious.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+		<script src="js/qrious/qrious.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
     <script src="js/web3.min.js"></script>
     <script src="js/truffle-contract.js"></script>
     <script src="js/booking.js"></script>
 	
-	<script type="text/javascript">	
-    (function() {
+	<script type="text/javascript">
+    $(document).ready(function() {
         'use strict';
 		
-				//var bookingHash = '1F3sAm6ZtwLAUnj7d38pGFxtP3RVEvtsbV';
+				var bookingHash = '1F3sAm6ZtwLAUnj7d38pGFxtP3RVEvtsbV';
 				
 				if (typeof bookingHash !== 'undefined') {
 					var QREncode = new QRious({
@@ -96,9 +103,18 @@
 					$('#spaceAddress').html(data[spaceId].address);
 					$('#spaceFacilities').html(data[spaceId].facilities);
 					$('#spaceSize').html(data[spaceId].surface);
-   		 	});
 
-		})();
+					var coords = [data[spaceId].lat, data[spaceId].lng];
+					var map = L.map('mapid').setView(coords, 10);
+					
+        	var CartoDB_Positron = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+						attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+						subdomains: 'abcd',
+						maxZoom: 17
+					}).addTo(map);
+					L.marker(coords).addTo(map);
+   		 	});
+		});
 	</script>
   </body>
 </html>
