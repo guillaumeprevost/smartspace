@@ -35,8 +35,10 @@ contract TestEspace {
 
         //uint result2 = 
         espace.addSpace("1","Office", "50 Lonsdale", "50 Lonsdale St", 1, 10, 2, "10 desks", "WIP");
+        espace.addSpace("2","Office", "50 Lonsdale", "50 Lonsdale St", 1, 10, 2, "10 desks", "WIP");
+        espace.addSpace("3","Office", "50 Lonsdale", "50 Lonsdale St", 1, 10, 2, "10 desks", "WIP");
 
-        espace.bookItem(1);
+        espace.bookItem(3);
 
         bool result = true;
         bool expected = true;

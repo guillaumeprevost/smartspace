@@ -18,8 +18,12 @@
     <![endif]-->
   </head>
   <body>
-	<div class="" style="position:absolute; right: 0; top: 0; padding: 25px"><a href="create.html">List my Space</a></div>
+  <div class="" style="position:absolute; right: 0; top: 0; padding: 25px"><a href="create.html">List my Space</a></div>
   
+  <a style="position:absolute; right: 0; bottom: 0;" onClick="$('#botFrame').show()"><img style="max-width: 100px" src="images/bot.jpg"/></a>
+  <div id="botFrame" hidden="true" style="position:absolute; right: 0; bottom: 0; z-index: 999; background-color: #ffffff">
+    <iframe width="500" height="400" src='https://webchat.botframework.com/embed/SmartSpaceBot?s=Y63_nKcXxGg.cwA.IwM.O69l3yXZ4Shy0-IDl5GTcnmMJ0pZPauEzJS5pWQCIUk'></iframe>
+  </div>
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-sm-8 col-sm-push-2">
@@ -56,7 +60,7 @@
 				<strong>Type</strong>: <span class="listing-type">N/A</span><br/>
 				<strong>Address</strong>: <span class="listing-address">N/A</span><br/>
 				<strong>Price</strong>: <span class="listing-surface">N/A</span><br/><br/>
-				<button class="btn btn-primary btn-book" type="button" data-id="0">Book it</button>
+        <a href="#" class="btn btn-primary btn-book" data-id="0">Book it</a>
 			  </div>
 			</div>
       </div>
@@ -83,7 +87,6 @@
 					</div>
 					<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button class="btn btn-primary btn-book" type="button" data-id="0">Book it</button>
 					</div>
 				</div>
 				</div>

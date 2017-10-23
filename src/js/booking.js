@@ -1,14 +1,16 @@
 App = {
+  spaceId: null,
   web3Provider: null,
   contracts: {},
 
-  init: function () {
+  init: function(itemId) {
+    spaceId = itemId;
     // Load listings.
-    $.getJSON('../properties.json', function (data) {
+    /*$.getJSON('../properties.json', function(data) {
       var listingsRow = $('#listingsRow');
       var listingTemplate = $('#listingTemplate');
 
-      for (i = 0; i < data.length; i++) {
+      for (i = 0; i < data.length; i ++) {
         listingTemplate.find('.panel-title').text(data[i].title);
         listingTemplate.find('img').attr('src', data[i].picture);
         listingTemplate.find('.listing-type').text(data[i].type);
@@ -19,12 +21,15 @@ App = {
         listingsRow.append(listingTemplate.html());
       }
     });
-
+*/
     return App.initWeb3();
   },
 
-  initWeb3: function () {
-    // Is there is an injected web3 instance?
+  initWeb3: function() {
+    /*
+     * Replace me...
+     */
+
     if (typeof web3 !== 'undefined') {
       App.web3Provider = web3.currentProvider;
     } else {
@@ -37,10 +42,11 @@ App = {
     
   },
 
-  initContract: function () {
+  initContract: function() {
     /*
      * Replace me...
      */
+
     $.getJSON('Espace.json', function(data) {
       // Get the necessary contract artifact file and instantiate it with truffle-contract
       var EspaceArtifact = data;
@@ -51,79 +57,45 @@ App = {
     
       // Use our contract to retrieve and mark the adopted pets
       //return App.markAdopted();
-    });    
-
-    return App.bindEvents();    
-
+      return App.getHash();
+    });        
 
   },
 
-  bindEvents: function () {
-    $(document).on('click', '.btn-book', App.handleBooking);
-  },
+  getHash: function() {
 
-  markAdopted: function (adopters, account) {
-    /*
-     * Replace me...
-     
     var espaceInstance;
-    
     App.contracts.Espace.deployed().then(function(instance) {
       espaceInstance = instance;
     
-      return espaceInstance.getSomething();
-    }).then(function(something) {
-      console.log(something);
+      return espaceInstance.getBookings.call();
+    }).then(function(bookings) {
+      //console.log(bookings);
+      //var spaceId = document.url.searchParams.get("id");
+      var aHash = "";
+      var myAccount = null;
+      web3.eth.getAccounts(function(error, accounts) {
+        if (error) {
+          console.log(error);
+        }
+        myAccount= accounts[0];                
       
-    }).catch(function(err) {
-      console.log(err.message);
-    });    
-    */
-  },
-
-  handleBooking: function () {
-    event.preventDefault();
-
-    var listingId = parseInt($(event.target).data('id'));
-
-    /*
-     * Replace me...
-     */
-
-    var espaceInstance;
-    
-    web3.eth.getAccounts(function(error, accounts) {
-      if (error) {
-        console.log(error);
-      }
-    
-      var account = accounts[1];
-    
-      App.contracts.Espace.deployed().then(function(instance) {
-        espaceInstance = instance;
-    
-        //working ok
-        //        function addSpace(bytes32 theCode, bytes32 theType, bytes32 theName, bytes32 theLocation, uint theStart, uint thePrice,
-          //      uint theEnd, bytes32 theFacilities, bytes32 thePhoto) returns (uint id) 
-        //return espaceInstance.addSpace("1","Office", "50 Lonsdale", "50 Lonsdale St", 1, 10, 2, "10 desks", "WIP", {from: account});
-        
-        //var amount = web3.toWei("5", "ether") 
-
-
-        //return espaceInstance.bookItem(1, {from: account, value: amount});
-        return espaceInstance.doSomething(1, {from: account});
-      }).then(function(result) {
-        return App.markAdopted();
-      }).catch(function(err) {
-        console.log(err.message);
+        if (bookings[spaceId] ==  myAccount) {
+            var QREncode = new QRious({
+                  element: document.getElementById('qr'),
+                  value: bookings[spaceId],
+              size: 300
+            });
+        }
       });
-    });     
+    });
   }
-
 };
 
-$(function () {
-  $(window).load(function () {
-    App.init();
+$(function() {
+  $(window).load(function() {
+    var url = new URL(window.location.href);
+    var spaceId = url.searchParams.get("id");
+    App.init(spaceId);
   });
 });

@@ -5,120 +5,28 @@
       "constant": false,
       "inputs": [
         {
+          "name": "theId",
+          "type": "uint256"
+        }
+      ],
+      "name": "doBooking",
+      "outputs": [
+        {
           "name": "id",
           "type": "uint256"
         }
       ],
-      "name": "bookItem",
-      "outputs": [
-        {
-          "name": "success",
-          "type": "bool"
-        }
-      ],
-      "payable": true,
+      "payable": false,
       "type": "function"
     },
     {
       "constant": false,
-      "inputs": [
-        {
-          "name": "theCode",
-          "type": "bytes32"
-        },
-        {
-          "name": "theType",
-          "type": "bytes32"
-        },
-        {
-          "name": "theName",
-          "type": "bytes32"
-        },
-        {
-          "name": "theLocation",
-          "type": "bytes32"
-        },
-        {
-          "name": "theStart",
-          "type": "uint256"
-        },
-        {
-          "name": "thePrice",
-          "type": "uint256"
-        },
-        {
-          "name": "theEnd",
-          "type": "uint256"
-        },
-        {
-          "name": "theFacilities",
-          "type": "bytes32"
-        },
-        {
-          "name": "thePhoto",
-          "type": "bytes32"
-        }
-      ],
-      "name": "addSpace",
-      "outputs": [
-        {
-          "name": "id",
-          "type": "uint256"
-        }
-      ],
-      "payable": false,
-      "type": "function"
-    },
-    {
-      "constant": true,
       "inputs": [],
-      "name": "spaceCount",
+      "name": "getBookers",
       "outputs": [
         {
           "name": "",
-          "type": "uint256"
-        }
-      ],
-      "payable": false,
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [
-        {
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "name": "spaces",
-      "outputs": [
-        {
-          "name": "spaceId",
-          "type": "uint256"
-        },
-        {
-          "name": "owner",
-          "type": "address"
-        },
-        {
-          "name": "renter",
-          "type": "address"
-        },
-        {
-          "name": "fromDatetime",
-          "type": "uint256"
-        },
-        {
-          "name": "toDatetime",
-          "type": "uint256"
-        },
-        {
-          "name": "itemPrice",
-          "type": "uint256"
-        },
-        {
-          "name": "itemBooked",
-          "type": "bool"
+          "type": "address[16]"
         }
       ],
       "payable": false,
@@ -143,68 +51,34 @@
     },
     {
       "constant": false,
-      "inputs": [
-        {
-          "name": "something",
-          "type": "uint256"
-        }
-      ],
-      "name": "doSomething",
+      "inputs": [],
+      "name": "getBookings",
       "outputs": [
         {
-          "name": "success",
-          "type": "bool"
+          "name": "",
+          "type": "address[16]"
         }
       ],
       "payable": false,
       "type": "function"
     },
     {
-      "anonymous": false,
+      "constant": true,
       "inputs": [
         {
-          "indexed": false,
-          "name": "spaceId",
+          "name": "",
           "type": "uint256"
-        },
-        {
-          "indexed": false,
-          "name": "owner",
-          "type": "address"
-        },
-        {
-          "indexed": false,
-          "name": "code",
-          "type": "bytes32"
-        },
-        {
-          "indexed": false,
-          "name": "itemType",
-          "type": "bytes32"
-        },
-        {
-          "indexed": false,
-          "name": "name",
-          "type": "bytes32"
-        },
-        {
-          "indexed": false,
-          "name": "location",
-          "type": "bytes32"
-        },
-        {
-          "indexed": false,
-          "name": "itemFacilities",
-          "type": "bytes32"
-        },
-        {
-          "indexed": false,
-          "name": "photoUrl",
-          "type": "bytes32"
         }
       ],
-      "name": "SpaceCreated",
-      "type": "event"
+      "name": "bookers",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
     },
     {
       "anonymous": false,
@@ -229,7 +103,7 @@
       "type": "event"
     }
   ],
-  "unlinked_binary": "0x6060604052341561000f57600080fd5b5b6105ff8061001f6000396000f300606060405236156100755763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416632ae12c1c811461007a5780632fd236d114610099578063319ae4b2146100da5780637586353b146100ff578063935f4c1814610161578063a6b206bf1461017a575b600080fd5b6100856004356101a4565b604051901515815260200160405180910390f35b34156100a457600080fd5b6100c860043560243560443560643560843560a43560c43560e435610104356102cd565b60405190815260200160405180910390f35b34156100e557600080fd5b6100c8610440565b60405190815260200160405180910390f35b341561010a57600080fd5b610115600435610446565b604051968752600160a060020a039586166020880152939094166040808701919091526060860192909252608085015260a0840192909252151560c083015260e0909101905180910390f35b610178600160a060020a03600435166024356104a4565b005b341561018557600080fd5b61008560043561052b565b604051901515815260200160405180910390f35b60006001828154811015156101b557fe5b906000526020600020906007020160005b506006015460ff161515600114156101e0575060006102c8565b600180838154811015156101f057fe5b906000526020600020906007020160005b50600601805460ff1916911515919091179055600180543391908490811061022557fe5b906000526020600020906007020160005b50600201805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055600180546102c491908490811061027857fe5b906000526020600020906007020160005b506001908101548154600160a060020a039091169190859081106102a957fe5b906000526020600020906007020160005b50600501546104a4565b5060015b919050565b60008054600180548082016102e28382610533565b916000526020600020906007020160005b60e06040519081016040908152858252600160a060020a03331660208301526000908201819052606082018c9052608082018a905260a082018b905260c082015291905081518155602082015160018201805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055604082015160028201805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055606082015181600301556080820151816004015560a0820151816005015560c0820151600691909101805460ff19169115159190911790555061010090506040519081016040908152828252600160a060020a033316602083015281018c9052606081018b9052608081018a905260a0810189905260c0810185905260e0018390526000805460010190559050805b509998505050505050505050565b60005481565b600180548290811061045457fe5b906000526020600020906007020160005b50805460018201546002830154600384015460048501546005860154600690960154949650600160a060020a0393841695939092169390929060ff1687565b600160a060020a0333163480156108fc0290604051600060405180830381858888f1935050505015156104d657600080fd5b7fedfbae1bcdeedd17feb1ebcf2d7a7e263a2b7c24e8488faae318a5049b7269e9338334604051600160a060020a039384168152919092166020820152604080820192909252606001905180910390a15b5050565b60015b919050565b81548183558181151161055f5760070281600702836000526020600020918201910161055f9190610565565b5b505050565b6105d091905b808211156105cc57600080825560018201805473ffffffffffffffffffffffffffffffffffffffff1990811690915560028301805490911690556003820181905560048201819055600582015560068101805460ff1916905560070161056b565b5090565b905600a165627a7a723058202f33e8357f3f05ad9e115c18b2db85abb82aa0fce196494e2b64c4ae96f257de0029",
+  "unlinked_binary": "0x6060604052341561000f57600080fd5b5b61036a8061001f6000396000f300606060405263ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663496dc32c811461006957806360538b3314610091578063935f4c18146100de578063955c842014610091578063f7b0f74b14610144575b600080fd5b341561007457600080fd5b61007f600435610176565b60405190815260200160405180910390f35b341561009c57600080fd5b6100a46101d1565b604051808261020080838360005b838110156100cb5780820151818401525b6020016100b2565b5050505090500191505060405180910390f35b6100f5600160a060020a036004351660243561021c565b005b341561009c57600080fd5b6100a46101d1565b604051808261020080838360005b838110156100cb5780820151818401525b6020016100b2565b5050505090500191505060405180910390f35b341561014f57600080fd5b61015a6004356102ee565b604051600160a060020a03909116815260200160405180910390f35b60008082101580156101895750600f8211155b151561019457600080fd5b33600083601081106101a257fe5b0160005b6101000a815481600160a060020a030219169083600160a060020a031602179055508190505b919050565b6101d9610315565b600060106102006040519081016040529190610200830182845b8154600160a060020a031681526001909101906020018083116101f3575b505050505090505b90565b600160a060020a0333163480156108fc0290604051600060405180830381858888f19350505050151561024e57600080fd5b7fedfbae1bcdeedd17feb1ebcf2d7a7e263a2b7c24e8488faae318a5049b7269e9338383604051600160a060020a039384168152919092166020820152604080820192909252606001905180910390a15b5050565b6101d9610315565b600060106102006040519081016040529190610200830182845b8154600160a060020a031681526001909101906020018083116101f3575b505050505090505b90565b600081601081106102fb57fe5b0160005b915054906101000a9004600160a060020a031681565b6102006040519081016040526010815b60008152600019909101906020018161032557905050905600a165627a7a7230582005af605e829ca966e77844add85edb5012a7a6750d7024e9bd4bb3c1fc59f4d60029",
   "networks": {
     "1508568053257": {
       "events": {
@@ -534,8 +408,504 @@
       "links": {},
       "address": "0xd8463adb3aee79b59f7170541587d2c3f82b0d99",
       "updated_at": 1508575807179
+    },
+    "1508590121358": {
+      "events": {
+        "0xe6f409f6578949b3c20837a527e96430b25fd7c4ce0658d8115cd3958749c0a6": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "spaceId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "code",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "itemType",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "name",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "location",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "itemFacilities",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "photoUrl",
+              "type": "bytes32"
+            }
+          ],
+          "name": "SpaceCreated",
+          "type": "event"
+        },
+        "0xedfbae1bcdeedd17feb1ebcf2d7a7e263a2b7c24e8488faae318a5049b7269e9": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "BookingPaid",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x56063be852f8afdd768ce75faab8c0fe5656c93b",
+      "updated_at": 1508590500986
+    },
+    "1508590792821": {
+      "events": {
+        "0xe6f409f6578949b3c20837a527e96430b25fd7c4ce0658d8115cd3958749c0a6": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "spaceId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "code",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "itemType",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "name",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "location",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "itemFacilities",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "photoUrl",
+              "type": "bytes32"
+            }
+          ],
+          "name": "SpaceCreated",
+          "type": "event"
+        },
+        "0xedfbae1bcdeedd17feb1ebcf2d7a7e263a2b7c24e8488faae318a5049b7269e9": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "BookingPaid",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x7549024d036af7f12dbb876dd04a34898d52a55d",
+      "updated_at": 1508590855353
+    },
+    "1508591056293": {
+      "events": {
+        "0xe6f409f6578949b3c20837a527e96430b25fd7c4ce0658d8115cd3958749c0a6": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "spaceId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "code",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "itemType",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "name",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "location",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "itemFacilities",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "photoUrl",
+              "type": "bytes32"
+            }
+          ],
+          "name": "SpaceCreated",
+          "type": "event"
+        },
+        "0xedfbae1bcdeedd17feb1ebcf2d7a7e263a2b7c24e8488faae318a5049b7269e9": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "BookingPaid",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xda262f9873c069b398836809f8d1b89c53cda1d9",
+      "updated_at": 1508591155158
+    },
+    "1508603180656": {
+      "events": {
+        "0xe6f409f6578949b3c20837a527e96430b25fd7c4ce0658d8115cd3958749c0a6": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "spaceId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "code",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "itemType",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "name",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "location",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "itemFacilities",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "photoUrl",
+              "type": "bytes32"
+            }
+          ],
+          "name": "SpaceCreated",
+          "type": "event"
+        },
+        "0xedfbae1bcdeedd17feb1ebcf2d7a7e263a2b7c24e8488faae318a5049b7269e9": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "BookingPaid",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x4b8977862171617a66e26881c795ac83b0ec6e2d",
+      "updated_at": 1508603234029
+    },
+    "1508622480091": {
+      "events": {
+        "0xe6f409f6578949b3c20837a527e96430b25fd7c4ce0658d8115cd3958749c0a6": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "spaceId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "code",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "itemType",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "name",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "location",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "itemFacilities",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "photoUrl",
+              "type": "bytes32"
+            }
+          ],
+          "name": "SpaceCreated",
+          "type": "event"
+        },
+        "0xedfbae1bcdeedd17feb1ebcf2d7a7e263a2b7c24e8488faae318a5049b7269e9": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "BookingPaid",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x85f7c4dab7917b7a92b6484504a2254e52ec04a3",
+      "updated_at": 1508622528195
+    },
+    "1508629356667": {
+      "events": {
+        "0xedfbae1bcdeedd17feb1ebcf2d7a7e263a2b7c24e8488faae318a5049b7269e9": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "BookingPaid",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x99ff8fc7fc4e87ee597ef2c0090318585db9e505",
+      "updated_at": 1508629422643
+    },
+    "1508629624541": {
+      "events": {
+        "0xedfbae1bcdeedd17feb1ebcf2d7a7e263a2b7c24e8488faae318a5049b7269e9": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "BookingPaid",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xf9b436925b52f10492b633de7e4efcd5a4257f20",
+      "updated_at": 1508629670272
+    },
+    "1508629914893": {
+      "events": {
+        "0xedfbae1bcdeedd17feb1ebcf2d7a7e263a2b7c24e8488faae318a5049b7269e9": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "BookingPaid",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x613893269478c3fd6fd6bd412b87ca80a64e7de2",
+      "updated_at": 1508629971383
+    },
+    "1508749668846": {
+      "events": {
+        "0xedfbae1bcdeedd17feb1ebcf2d7a7e263a2b7c24e8488faae318a5049b7269e9": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "BookingPaid",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xf6fdf3220ad25b32f9cec80fb2998ea80933a075",
+      "updated_at": 1508749720555
     }
   },
   "schema_version": "0.0.5",
-  "updated_at": 1508581122943
+  "updated_at": 1508749720555
 }

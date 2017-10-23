@@ -2,7 +2,8 @@ pragma solidity ^0.4.4;
 
 contract Espace {
     
-
+/*
+* PX commented out on sunday morning
     enum ItemTypes { House, MeetingRoom, Apartment, StorageCage }
     enum ItemStatus {Created, UnderReview, Posted, Booked, Cancelled}
 
@@ -32,7 +33,27 @@ contract Espace {
     SpaceStruct[] public spaces;
     //mapping(uint => SpaceStruct[]) public spaces;
     mapping (address => uint) balances;
+*/
+    address[16] public bookers;
 
+  // Adopting a pet
+    function doBooking(uint theId) returns (uint id) {
+        require(theId >= 0 && theId <= 15);
+
+        bookers[theId] = msg.sender;
+
+        //address receiver = 0x6331e68bd525cd63d6fd37275c72e0feadeb388d;
+        //sendPayment(receiver,12);
+
+        return theId;
+    }    
+
+    // Retrieving the adopters
+    function getBookings() public returns (address[16]) {
+        return bookers;
+    }    
+/*
+* PX commented out on sunday morning
     event SpaceCreated( uint spaceId,
         address owner,
         bytes32 code,
@@ -47,12 +68,12 @@ contract Espace {
         {
             return true;
         }
-/*
+
     function getSomething ()
-        return (string aString)
+        returns (string aString)
         {
             return "something";
-        }*/
+        }
 
     function addSpace(bytes32 theCode, bytes32 theType, bytes32 theName, bytes32 theLocation, uint theStart, uint thePrice,
             uint theEnd, bytes32 theFacilities, bytes32 thePhoto) returns (uint id) 
@@ -75,7 +96,7 @@ contract Espace {
         return theId;      
         
     }   
-     
+*/     
 
 
 /*
@@ -88,6 +109,8 @@ contract Espace {
         //return "not working";
     }*/
 
+/*
+* PX commented out on sunday morning
     function bookItem(uint id) payable
          public returns (bool success) 
     {
@@ -96,12 +119,17 @@ contract Espace {
         
         spaces[id].itemBooked = true;
         spaces[id].renter = msg.sender;
+
+        require(id >= 0 && id <= 15);
+
+        bookers[id] = msg.sender;
+        
         
         sendPayment(spaces[id].owner, spaces[id].itemPrice);
         return true;
                 
-    }
-
+    }    
+*/
     //address public recipient;
     //mapping (address => uint) public balances;
 
@@ -120,6 +148,10 @@ contract Espace {
         return BookingPaid(msg.sender, receiver, amount);
     }    
     
+    // Retrieving the bookers
+    function getBookers() public returns (address[16]) {
+        return bookers;
+    }    
 
       // Retrieving the items
     /*function getMyItemName(address myAddress) public returns (string) {
