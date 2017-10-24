@@ -155,8 +155,8 @@ App = {
         espaceInstance = instance;
 
     
-        
-        espaceInstance.doBooking(listingId, {from: account});//,value: web3.toWei(1, 'ether')});
+        var amount = web3.toWei(1, "ether")    
+        espaceInstance.doBooking(listingId, {from: account, value: amount});//,value: web3.toWei(1, 'ether')});
         
         
 

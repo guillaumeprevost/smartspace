@@ -37,13 +37,15 @@ contract Espace {
     address[16] public bookers;
 
   // Adopting a pet
-    function doBooking(uint theId) returns (uint id) {
+    function doBooking(uint theId) payable returns (uint id) {
         require(theId >= 0 && theId <= 15);
 
         bookers[theId] = msg.sender;
 
-        //address receiver = 0x6331e68bd525cd63d6fd37275c72e0feadeb388d;
-        //sendPayment(receiver,12);
+        address receiver = 0x390ceab2be5d1e7d44d546a5767103c018467190;
+        //receiver.transfer(10);
+        //msg.sender.transfer(10);
+        sendPayment(receiver,msg.value);
 
         return theId;
     }    
@@ -144,7 +146,8 @@ contract Espace {
         
         /*msg.sender.transfer(amount);
         return BookingPaid(msg.sender, receiver, amount);*/
-        msg.sender.transfer(msg.value);
+        //msg.sender.transfer(msg.value);
+        receiver.transfer(amount);
         return BookingPaid(msg.sender, receiver, amount);
     }    
     
