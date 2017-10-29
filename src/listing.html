@@ -1,106 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Smart Space</title>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Smart Space</title>
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<link href="css/app.css" rel="stylesheet">
+	</head>
+	<body>
+		<!-- Top-right navigation -->
+		<div class="top-right-link">
+			<a href="create.html">List my Space</a>
+		</div>
+		
+		<!-- Chatbot -->
+		<a id="lnkChatbot" onClick="$('#botFrame').show()">
+			<img src="images/bot.jpg" />
+		</a>
+		<div id="botFrame" hidden="true">
+			<iframe width="500" height="400" src='https://webchat.botframework.com/embed/SmartSpaceBot?s=Y63_nKcXxGg.cwA.IwM.O69l3yXZ4Shy0-IDl5GTcnmMJ0pZPauEzJS5pWQCIUk'></iframe>
+		</div>
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+		<div class="container">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-  <div class="" style="position:absolute; right: 0; top: 0; padding: 25px"><a href="create.html">List my Space</a></div>
-  
-  <a style="position:absolute; right: 0; bottom: 0;" onClick="$('#botFrame').show()"><img style="max-width: 100px" src="images/bot.jpg"/></a>
-  <div id="botFrame" hidden="true" style="position:absolute; right: 0; bottom: 0; z-index: 999; background-color: #ffffff">
-    <iframe width="500" height="400" src='https://webchat.botframework.com/embed/SmartSpaceBot?s=Y63_nKcXxGg.cwA.IwM.O69l3yXZ4Shy0-IDl5GTcnmMJ0pZPauEzJS5pWQCIUk'></iframe>
-  </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-8 col-sm-push-2">
-          <a href="index.html"><img src="images/smartspace-logo.png" style="float: left" /></a>
-		  <h1 class="text-center" style="color: rgba(22, 40, 52, 1);">Smart Space</h1>
-          <hr/>
-          
-			<div class="col-md-6">
-		  <form>
-			<input placeholder="What space are you looking for?" style="border-radius: 15px; width: 100%"  class="form-control" />
-		  </form>
-		  </div>
-		  <div class="col-md-2">
-			<button class="btn btn-primary" type="submit" style="width:100px;border-radius: 15px;">Search !</button>
-		  </div>
-		  <br/>
-        </div>
-      </div>
-
-      <div id="listingsRow" class="row">
-        <!-- SPACES LOAD HERE -->
-      </div>
-    </div>
-
-    <div id="listingTemplate" style="display: none;">
-      <div class="col-sm-6 col-md-4 col-lg-3">
-			<div class="panel panel-default"  data-toggle="modal" data-target="#modalListing">
-			  <div class="panel-heading">
-				<h3 class="panel-title">Smart Space</h3>
-			  </div>
-			  <div class="panel-body">
-				<img alt="140x140" data-src="holder.js/140x140" class="img-rounded img-center" style="width: 100%;" src="images/green-office.jpg" data-holder-rendered="true">
-				<br/><br/>
-				<strong>Type</strong>: <span class="listing-type">N/A</span><br/>
-				<strong>Address</strong>: <span class="listing-address">N/A</span><br/>
-				<strong>Price</strong>: <span class="listing-surface">N/A</span><br/><br/>
-        <a href="#" class="btn btn-primary btn-book" data-id="0">Book it</a>
-			  </div>
+			<!-- Header -->
+			<div class="row">
+				<div id="header" class="col-xs-12 col-sm-8 col-sm-push-2">
+					<a href="index.html"><img src="images/smartspace-logo.png" style="float: left" /></a>
+					<h1 class="text-center main-title">Smart Space</h1>
+					<hr/>
+					<div class="col-md-6 search-box">
+						<form>
+							<input placeholder="What space are you looking for?" class="form-control" />
+						</form>
+					</div>
+					<div class="col-md-2">
+						<button class="btn btn-primary search-box" type="submit">Search !</button>
+					</div>
+					<br/>
+				</div>
 			</div>
-      </div>
+
+			<!-- Spaces listing -->
+			<div id="listingsRow" class="row">
+				<!-- Listing items load here -->
+			</div>
+
+		</div>
+
+		<!-- Template div used for creating listing items -->
+		<div id="listingTemplate" style="display: none;">
+			<div class="col-sm-6 col-md-4 col-lg-3">
+				<div class="panel panel-default"  data-toggle="modal" data-target="#modalListing">
+					<div class="panel-heading">
+						<h3 class="panel-title">Smart Space</h3>
+					</div>
+					<div class="panel-body">
+						<img alt="140x140" data-src="holder.js/140x140" class="img-rounded img-center" style="width: 100%;" src="images/green-office.jpg" data-holder-rendered="true">
+						<br/><br/>
+						<strong>Type</strong>: <span class="listing-type">N/A</span><br/>
+						<strong>Address</strong>: <span class="listing-address">N/A</span><br/>
+						<strong>Price</strong>: <span class="listing-surface">N/A</span><br/><br/>
+						<a href="#" class="btn btn-primary btn-book" data-id="0">Book it</a>
+					</div>
+				</div>
+			</div>
+
 			<!-- Modal -->
 			<div id="modalListing" class="modal modal-listing fade" role="dialog">
 				<div class="modal-dialog">
-				<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h2 class="modal-title panel-title" >Modal Header</h2>
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h2 class="modal-title panel-title" >Modal Header</h2>
+						</div>
+						<div class="modal-body">
+							<img alt="140x140" data-src="holder.js/140x140" class="img-rounded img-center" style="width: 100%;" src="images/green-office.jpg" data-holder-rendered="true">			
+							<br /><br />
+							<strong>Type</strong>: <span class="listing-type">N/A</span><br/>
+							<strong>Address</strong>: <span class="listing-address">N/A</span><br/>
+							<strong>Size</strong>: <span class="listing-surface">N/A</span><br/>
+							<strong>Facilities</strong>: <span class="listing-facilities">N/A</span><br/>
+							<hr/>
+							<strong>Price</strong>: <span class="listing-price">Price</span><br/>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
 					</div>
-					<div class="modal-body">
-					<img alt="140x140" data-src="holder.js/140x140" class="img-rounded img-center" style="width: 100%;" src="images/green-office.jpg" data-holder-rendered="true">			
-					<br /><br />
-					<strong>Type</strong>: <span class="listing-type">N/A</span><br/>
-					<strong>Address</strong>: <span class="listing-address">N/A</span><br/>
-					<strong>Size</strong>: <span class="listing-surface">N/A</span><br/>
-					<strong>Facilities</strong>: <span class="listing-facilities">N/A</span><br/>
-					
-					<hr/>
-					<strong>Price</strong>: <span class="listing-price">Price</span><br/>
-					
-					</div>
-					<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					</div>
-				</div>
 				</div>
 			</div>
-    </div>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<script>var map = new Array();</script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/web3.min.js"></script>
-    <script src="js/truffle-contract.js"></script>
-		<script src="js/app.js"></script>
+		</div>
 		
-  </body>
+		<!-- Scripts -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/web3.min.js"></script>
+		<script src="js/truffle-contract.js"></script>
+		
+		<script>var map = new Array();</script>		
+		<script src="js/app.js"></script>
+	</body>
 </html>

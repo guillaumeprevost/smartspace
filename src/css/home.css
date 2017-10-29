@@ -1,0 +1,51 @@
+@import 'https://fonts.googleapis.com/css?family=Ubuntu';
+
+body {
+  font-family: 'Ubuntu', 'Sans Serif';
+  font-weight: 800;
+}
+
+h1 {
+  font-size: 40pt;
+}
+
+h2 {
+  font-size: 30pt;
+}
+h1, h2 {
+  margin-left: 20%;
+}
+
+video#video-background {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background: url(polina.jpg) no-repeat;
+  background-size: cover;
+}
+
+#home {
+  color: #07faf9;
+  background-color:rgba(22, 40, 52, 0.5);
+  margin-top: 300px;
+  display: block;
+}
+
+#home img.logo {
+  float: left;
+}
+
+#btnStart {
+  border-radius: 15px;
+  background-color:rgba(22, 40, 52, 0.5);
+  color: #09f7f7;
+}

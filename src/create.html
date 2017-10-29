@@ -1,105 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Smart Space</title>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Smart Space</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<link href="css/app.css" rel="stylesheet">
+	</head>
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<body>
+		<div class="back-link"><a href="listing.html">^ Back to listings</a></div>
+		
+		<div class="container">
+			
+			<div class="row">
+				<div id="header" class="col-xs-12 col-sm-8 col-sm-push-2">
+					<a href="index.html"><img src="images/smartspace-logo.png" style="float: left" /></a>
+					<h1 class="text-center main-title">Smart Space</h1>
+					<hr/>
+					<h2>List your Space:</h2>
+					<br/>
+				</div>
+				<br />
+			</div>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-	<div style="position:absolute; right: 0; top: 0; padding: 25px"><a href="listing.html">^ Back to listings</a></div>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-8 col-sm-push-2">
-          <a href="index.html"><img src="images/smartspace-logo.png" style="float: left" /></a>
-		  <h1 class="text-center" style="color: rgba(22, 40, 52, 1);">Smart Space</h1>
-          <hr/>
-		  <h2>List your Space:</h2>
-		  <br/>
-        </div>
-		  <br />
+			<div class="row">
+				<form id="listmyspace" class="form-horizontal">
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="title">Title:</label>
+						<div class="col-sm-10">
+							<input type="text" name="title" class="form-control" id="title" placeholder="The name of your listing" required />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="type">Type:</label>
+						<div class="col-sm-10">
+							<select class="form-control" id="type" name="type">
+								<option>Office space</option>
+								<option>Meeting space</option>
+								<option>Room</option>
+								<option>Event venue</option>
+								<option>Sport</option>
+								<option>Storage</option>
+								<option>Bike rack</option>
+								<option>Car park</option>
+								<option>Change room</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="address">Location:</label>
+						<div class="col-sm-10">
+							<input type="text" name="address" class="form-control" id="address" placeholder="Exact location of your space (address, level, unit number, etc.)" required />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="facilities">Facilities:</label>
+						<div class="col-sm-10">
+							<input type="text" name="facilities" class="form-control" id="facilities" placeholder="List the facilities available for your space" required />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="size">Size:</label>
+						<div class="col-sm-10">
+							<input type="text" name="size" class="form-control" id="size" placeholder="Surfaces in square meters, volumes in cubic meters. N/A otherwise." required />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="price">Price/h:</label>
+						<div class="col-sm-10">
+							<input type="text" name="price" class="form-control" id="price" placeholder="The hourly price of your space. People will be able to rent per the minute." required />
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<button type="submit" class="btn btn-primary btn-create">List my Space</button>
+						</div>
+					</div>
+				</form>
+			</div>
 		</div>
 		
-		<div class="row">
-			<form id="listmyspace" class="form-horizontal">
-				<div class="form-group">
-					<label class="control-label col-sm-2" for="title">Title:</label>
-					<div class="col-sm-10">
-						<input type="text" name="title" class="form-control" id="title" placeholder="The name of your listing" required />
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="control-label col-sm-2" for="type">Type:</label>
-					<div class="col-sm-10">
-						<select class="form-control" id="type" name="type">
-							<option>Office space</option>
-							<option>Meeting space</option>
-							<option>Room</option>
-							<option>Event venue</option>
-							<option>Sport</option>
-							<option>Storage</option>
-							<option>Bike rack</option>
-							<option>Car park</option>
-							<option>Change room</option>
-						  </select>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="control-label col-sm-2" for="address">Location:</label>
-					<div class="col-sm-10">
-						<input type="text" name="address" class="form-control" id="address" placeholder="Exact location of your space (address, level, unit number, etc.)" required />
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="control-label col-sm-2" for="facilities">Facilities:</label>
-					<div class="col-sm-10">
-						<input type="text" name="facilities" class="form-control" id="facilities" placeholder="List the facilities available for your space" required />
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="control-label col-sm-2" for="size">Size:</label>
-					<div class="col-sm-10">
-						<input type="text" name="size" class="form-control" id="size" placeholder="Surfaces in square meters, volumes in cubic meters. N/A otherwise." required />
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="control-label col-sm-2" for="price">Price/h:</label>
-					<div class="col-sm-10">
-						<input type="text" name="price" class="form-control" id="price" placeholder="The hourly price of your space. People will be able to rent per the minute." required />
-					</div>
-				</div>
-				<div class="form-group"> 
-					<div class="col-sm-offset-2 col-sm-10">
-						<button type="submit" class="btn btn-primary btn-create">List my Space</button>
-					</div>
-				</div>
-			</form>
-		</div>
-	
-    </div>
-		
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
+		<!-- Scripts -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="js/qrious/qrious.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-    <script src="js/web3.min.js"></script>
-    <script src="js/truffle-contract.js"></script>
+		<script src="js/web3.min.js"></script>
+		<script src="js/truffle-contract.js"></script>
 		<script src="js/create.js"></script>
-		
+
 		<script type="text/javascript">	
 			(function() {
 				'use strict';	
@@ -115,8 +109,7 @@
 					};
 					App.handleBooking(spaceObj); 
 				});
-		})();
+			})();
 		</script>
-
-  </body>
+	</body>
 </html>

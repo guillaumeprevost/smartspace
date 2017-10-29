@@ -1,103 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Smart Space</title>
-
-    <!-- Bootstrap -->
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title>Smart Space</title>
 		
-		<!-- Leaflet -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="css/leaflet.css" />
 		<script type="text/javascript" src="js/leaflet.js"></script>
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<link rel="stylesheet" href="css/app.css" />
+	</head>
+	<body>
+		<div class="top-right-link"><a href="listing.html">^ Back to listings</a></div>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-			<div style="position:absolute; right: 0; top: 0; padding: 25px"><a href="listing.html">^ Back to listings</a></div>			
-
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-8 col-sm-push-2">
-          <a href="index.html"><img src="images/smartspace-logo.png" style="float: left" /></a>
-		  <h1 class="text-center" style="color: rgba(22, 40, 52, 1);">Smart Space</h1>
-          <hr/>
-		  <!--<div class="col-md-3 text-center">
-			  <form>
-				<button class="btn btn-primary" type="submit" style="width:100%; border-radius: 15px; background-color:rgba(22, 40, 52, 0.6); color: #09f7f7">Book this Space !</button>
-			  </form>
-		  </div>-->
-		  <br/>
-        </div>
-		  <br />
-		</div>
-
-		<div class="row">
-		<div class="col-md-12 alert alert-success">
-			<strong>Booking READY!</strong> Booked from Sunday 11:03 to 17:03 - Paid ETH 12
-		  </div>
-		</div>
-		
-		<div class="row">
-			<div class="col-md-4">
-				<canvas id="qr"></canvas>
+		<div class="container">
+			
+			<!-- Header -->
+			<div class="row">
+				<div class="col-xs-12 col-sm-8 col-sm-push-2">
+					<a href="index.html"><img src="images/smartspace-logo.png" style="float: left" /></a>
+					<h1 class="text-center main-title">Smart Space</h1>
+					<hr/>
+					<!-- Subtitle etc. go here -->
+					<br/>
+				</div>
 				<br />
-				<small>Show this QR code to unlock your Smart Space!</small>
 			</div>
 			
-			<div class="col-md-8">
-				<img id="spacePicture" style="max-width: 100%; max-height: 300px" />
-				<h1 id="spaceTitle"></h1>
-				<p><strong>Type</strong>: <span id="spaceType"></span></p>
-				<p><strong>Address</strong>: <span id="spaceAddress"></span></p>
-				<p><strong>Size</strong>: <span id="spaceSize"></span></p>
-				<p><strong>Facilities</strong>: <span id="spaceFacilities"></span></p>
-				<hr />
-				<h3>How to get there?</h3>
-				<div id="mapid" style="height: 300px"></div>
-				<br />
+			<!-- Confirmation box -->
+			<div class="row">
+				<div class="col-md-12 alert alert-success">
+					<strong>Booking READY!</strong> Booked from Sunday 11:03 to 17:03 - Paid ETH 12
+				</div>
+			</div>
+
+			<div class="row">
+				<!-- QR Code -->
+				<div class="col-md-4">
+					<canvas id="qr"></canvas>
+					<br />
+					<small>Show this QR code to unlock your Smart Space!</small>
+				</div>
+					<!-- Space details -->
+					<div class="col-md-8">
+						<img id="spacePicture" style="max-width: 100%; max-height: 300px" />
+						<h1 id="spaceTitle"></h1>
+						<p><strong>Type</strong>: <span id="spaceType"></span></p>
+						<p><strong>Address</strong>: <span id="spaceAddress"></span></p>
+						<p><strong>Size</strong>: <span id="spaceSize"></span></p>
+						<p><strong>Facilities</strong>: <span id="spaceFacilities"></span></p>
+						<hr />
+						<h3>How to get there?</h3>
+						<div id="mapid" style="height: 300px"></div>
+						<br />
+				</div>
 			</div>
 		</div>
-	
-    </div>
-    
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
+		
+		<!-- Scripts -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="js/qrious/qrious.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-    <script src="js/web3.min.js"></script>
-    <script src="js/truffle-contract.js"></script>
-    <script src="js/booking.js"></script>
-	
-	<script type="text/javascript">
-    $(document).ready(function() {
-        'use strict';
-		
+		<script src="js/web3.min.js"></script>
+		<script src="js/truffle-contract.js"></script>
+		<script src="js/booking.js"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+			  'use strict';
 				var bookingHash = '1F3sAm6ZtwLAUnj7d38pGFxtP3RVEvtsbV';
 				
 				if (typeof bookingHash !== 'undefined') {
 					var QREncode = new QRious({
-								element: document.getElementById('qr'),
-								value: bookingHash,
+						element: document.getElementById('qr'),
+						value: bookingHash,
 						size: 300
 					});
 				}
-				
-
+			
 				var url = new URL(window.location.href);
 				var spaceId = url.searchParams.get("id");
 				console.log(spaceId);
-
+				
 				$.getJSON('../properties.json', function(data) {
 					$('#spacePicture').attr('src', data[spaceId].picture);
 					$('#spaceTitle').html(data[spaceId].title);
@@ -105,19 +95,18 @@
 					$('#spaceAddress').html(data[spaceId].address);
 					$('#spaceFacilities').html(data[spaceId].facilities);
 					$('#spaceSize').html(data[spaceId].surface);
-
+				
 					var coords = [data[spaceId].lat, data[spaceId].lng];
 					var map = L.map('mapid').setView(coords, 10);
-					
-        	var CartoDB_Positron = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+					var CartoDB_Positron = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
 						attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
 						subdomains: 'abcd',
 						maxZoom: 19
 					}).addTo(map);
 					L.marker(coords).addTo(map);
 					map.setZoom(14);
-   		 	});
-		});
-	</script>
-  </body>
+				});
+			});
+		</script>
+	</body>
 </html>
